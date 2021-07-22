@@ -1,0 +1,35 @@
+{% comment -%}
+이 모듈이 생성하는 변수:
+
+TABLE_OF_CONTENTS
+  <UL.toc> 전체 문서 목차. _data/toc.yml 에서 정의
+
+{% endcomment -%}
+
+{% capture TABLE_OF_CONTENTS %}
+<ul>
+{% for chapter in site.data.toc -%}
+{%   assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
+{%   assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+{% comment -%}
+doc의 속성:
+  layout
+  title 제목 속성(프론트메타)
+  content
+  dir
+  name 파일명
+  path 파일 경로
+  url 상대 URL
+{% endcomment -%}
+  <li><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
+    <ul>
+{%   for doc_name in chapter[1] -%}
+{%     assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" | append: doc_name | append: "/" -%}
+{%     assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+      <li><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
+{%   endfor -%}
+    </ul>
+  </li>
+{% endfor -%}
+</ul>
+{% endcapture -%}

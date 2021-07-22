@@ -1,0 +1,6 @@
+python:
+  - vscode
+  - anaconda
+plotting:
+  - data_plot
+  - function_plot

@@ -1,0 +1,12 @@
+{% comment -%}
+이 모듈이 생성하는 변수:
+
+CONTENT
+  문서 내용
+
+{% endcomment -%}
+{% assign doc_url = "/" | append: site.docsurl | append: page.url | replace: "//", "/" -%}
+{% assign doc = site.html_pages | where: 'dir', page.url | first -%}
+{% capture CONTENT %}
+{{ doc.content }}
+{% endcapture -%}

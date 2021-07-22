@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% include docs_loader.html -%}
+{% include article_loader.html -%}
+  <head>
+    {% if page.url == "/" %}
+    <meta http-equiv="refresh" content="0;URL='{{ site.docsurl | absolute_url }}'" />
+    {% endif %}
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "css/main.css" | absolute_url }}">
+  </head>
+  <body>
+    {{ TABLE_OF_CONTENTS }}
+    <article>
+      {{ CONTENT }}
+    </article>
+  </body>
+</html>
