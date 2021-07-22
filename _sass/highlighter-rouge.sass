@@ -1,7 +1,28 @@
+code
+  display: inline-block
+  box-sizing: content-box
+  padding: 2px 7px
+  border-radius: 2px
+  background: material-color('pink', '600')
+  color: material-color('pink', '50')
+  font-size: 0.9em
+pre > code
+  overflow-x: auto
+  background: material-color('blue-grey', '900')
+  color: material-color('blue-grey', '50')
+  
 div.highlighter-rouge
   overflow-x: auto
   background: material-color('blue-grey', '900')
   color: material-color('blue-grey', '50')
+  code
+    padding: 0
+    display: inline
+    background: unset
+    color: unset
+    font-size: 1em
+  pre
+    margin: 0.5rem 0
   .highlight
     td.rouge-gutter
       min-width: 1.5em
@@ -22,5 +43,8 @@ div.highlighter-rouge
       color: material-color('yellow', '400')
     .mi, .bp
       color: material-color('purple', '300')
+    .c1
+      color: material-color('blue-grey', '300')
+
 
 
