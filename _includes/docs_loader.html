@@ -21,20 +21,23 @@ doc의 속성:
   path 파일 경로
   url 상대 URL
 {% endcomment -%}
+<li class="toc-1">
 {%   if doc.url == page.url -%}
-  <li><a class="active" href="">{{ doc.title }}</a>
+  <a class="active" href="">{{ doc.title }}</a>
 {%   else -%}
-  <li><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
+  <a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
 {%   endif -%}
     <ul>
 {%   for doc_name in chapter[1] -%}
 {%     assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" | append: doc_name | append: "/" -%}
 {%     assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+      <li class="toc-2">
 {%     if doc.url == page.url -%}
-  <li><a class="active" href="">{{ doc.title }}</a>
+        <a class="active" href="">{{ doc.title }}</a>
 {%     else -%}
-  <li><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
+        <a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
 {%     endif -%}
+      </li>
 {%   endfor -%}
     </ul>
   </li>
