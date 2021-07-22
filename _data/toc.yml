@@ -2,5 +2,6 @@ python:
   - vscode
   - anaconda
 plotting:
-  - data_plot
   - function_plot
+  - data_plot
+  - data_fitting
