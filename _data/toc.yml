@@ -1,6 +1,7 @@
-python:
+python_install:
   - vscode
   - anaconda
+  - google_colab
 plotting:
   - function_plot
   - data_plot
