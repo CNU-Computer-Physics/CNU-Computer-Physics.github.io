@@ -23,7 +23,7 @@ email: soma0sd@gmail.com
 description: >-
   충남대학교 전산물리학 교재개발
 baseurl: ""
-url: "https://cnu-computer-physics.github.io/"
+url: "https://cnu-computer-physics.github.io"
 github_username: soma0sd
 docsurl: "docs/"
 
