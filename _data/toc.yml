@@ -9,3 +9,5 @@ plotting:
   - data_fitting
   - function_differential
   - data_differential
+  - function_integration
+  - data_integration
