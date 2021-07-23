@@ -26,7 +26,10 @@ if __name__ == "__main__":
 
 ```
 
-`np.linspace(0, np.pi * 3)`은 0부터 $ 3\pi $사이 숫자를 일정 간격으로 50개 만들어 numpy의 array 자료형으로 출력합니다. `plt.grid(True)`를 사용하여 그래프에 격자 보조선을 넣을 수 있습니다. 위 예제를 실행하면 아래 그래프를 표시합니다.
+`np.linspace(0, np.pi * 3)`은 0부터 $ 3\pi $사이 숫자를 일정 간격으로 디폴트 값 50개 만들어 numpy의 array 자료형으로 출력합니다.
+(추가설명) `np.linspace(xmin, xmax, ndata)` 는 xmin 부터 xmax 사이 숫자를 일정 간격으로 ndata 개수만큼 생성하여 numpy 의 array 자료형으로 출력합니다.
+
+`plt.grid(True)`를 사용하여 그래프에 격자 보조선을 넣을 수 있습니다. 위 예제를 실행하면 아래 그래프를 표시합니다.
 
 ![코드 결과](../assets/function_plot_1.png)
 
