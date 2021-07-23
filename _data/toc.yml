@@ -6,6 +6,7 @@ python_install:
 plotting:
   - function_plot
   - data_plot
+analysis:
   - data_fitting
   - function_differential
   - data_differential
