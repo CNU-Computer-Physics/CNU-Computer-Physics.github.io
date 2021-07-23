@@ -7,3 +7,5 @@ plotting:
   - function_plot
   - data_plot
   - data_fitting
+  - function_differential
+  - data_differential
