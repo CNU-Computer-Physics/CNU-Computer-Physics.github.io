@@ -12,3 +12,8 @@ analysis:
   - data_differential
   - function_integration
   - data_integration
+simulation:
+  - monte_carlo
+optimization:
+  - ant_colony
+
