@@ -32,9 +32,14 @@ article
 aside
   width: $sidebar_width
   overflow-x: hidden
+  z-index: 100
+  background: material-color('blue-grey', '50')
+  transition: 0.5s
   ul
     list-style: none
     padding-left: 0
+    a
+      transition: 0.3s
     .toc-1 a
       padding-left: 1rem
       font-weight: bold
@@ -53,3 +58,30 @@ aside
     &.active
       background: material-color('cyan', '900')
       color: material-color('blue-grey', '50')
+
+#open-sidebar
+  display: none
+  position: absolute
+  top: 0.5rem
+  left: 0.5rem
+  z-index: 99
+  width: 6rem
+  height: 2.8rem
+  line-height: 2.8rem 
+  font-size: 1.4rem
+  text-align: center
+  font-weight: bold
+  vertical-align: middle
+  background: material-color('cyan', '700')
+  color: material-color('cyan', '50')
+  border-radius: 2px
+
+#close-sidebar
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 99
+  background: rgba(0, 0, 0, 0.5)
