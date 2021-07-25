@@ -4,6 +4,8 @@ title: 함수의 적분
 
 # 함수의 적분
 
+함수를 구간적분하고 적분 값과 적분 구간을 그래프에 표시합니다.
+
 ```python
 """
 사다리꼴 방법을 이용한 함수의 적분량 계산 
@@ -44,9 +46,11 @@ if __name__ == "__main__":
     plt.show()
 ```
 
+![코드 결과](../assets/function_integration_1.png)
+
 이 프로그램은 사다리꼴 적분을 직접 `int_f()` 함수로 구현해서 사용하는 방법과 `scipy`의 `integrate.trapezoid`함수를 이용하는 방법을 각각 실행하고 결과를 그래프상에 표시합니다.
 
-![코드 결과](../assets/function_integration_1.png)
+그림의 SCIPY는 `scipy`에서 제공하는 적분함수 `trapezoid()`로 계산한 적분량, TZ int는 직접 만든 `int_f()`로 계산한 적분량입니다. 적분 영역은 빨간색으로 표시하였습니다.
 
 ## 사다리꼴 적분
 
