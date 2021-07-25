@@ -8,6 +8,14 @@ TABLE_OF_CONTENTS
 
 {% capture TABLE_OF_CONTENTS %}
 <ul>
+  <li class="toc-1">
+{%  assign home = site.docsurl | relative_url -%}
+{%   if home == page.url -%}
+    <a class="active" href="">{{ site.title }}</a>
+{%   else -%}
+    <a href="{{ site.docsurl | absolute_url }}">{{ site.title }}</a>
+{%   endif -%}
+  </li>
 {% for chapter in site.data.toc -%}
 {%   assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
 {%   assign doc = site.html_pages | where: 'dir', doc_dir | first -%}

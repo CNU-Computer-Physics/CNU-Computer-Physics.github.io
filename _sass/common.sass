@@ -1,9 +1,21 @@
+$article_width: 800px
+$sidebar_width: 250px
+  
 a 
   text-decoration: none
+
+body
+  display: flex
+
+main
+  width: 100%
+
 article
+  margin: auto
   padding: 1rem 0.5rem
   line-height: 1.8em
-  max-width: 800px
+  width: $article_width
+  max-width: $article_width
   h1
     text-align: center
     margin-bottom: 1.2em
@@ -14,3 +26,28 @@ article
     color: material-color('blue', '600')
   img
     max-width: 100%
+
+aside
+  width: $sidebar_width
+  overflow-x: hidden
+  ul
+    list-style: none
+    padding-left: 0
+    .toc-1 a
+      padding-left: 1rem
+      font-weight: bold
+    .toc-2 a
+      padding-left: 2rem
+      font-weight: normal
+  a
+    display: block
+    line-height: 1.5em
+    color: material-color('cyan', '900')
+    padding: 5px
+    .toc-1 &
+      font-weight: bold
+    .toc-1 &
+      font-weight: normal
+    &.active
+      background: material-color('cyan', '900')
+      color: material-color('blue-grey', '50')

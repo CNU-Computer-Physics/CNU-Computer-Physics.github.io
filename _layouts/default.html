@@ -16,11 +16,13 @@
   <link rel="stylesheet" href="{{ "css/main.css" | absolute_url }}">
 </head>
 <body>
-  <aside>
+  <aside id="toc-sidebar">
     {{ TABLE_OF_CONTENTS }}
   </aside>
-  <article>
-    {{ CONTENT }}
-  </article>
+  <main>
+    <article>
+      {{ CONTENT }}
+    </article>
+  </main>
 </body>
 </html>
