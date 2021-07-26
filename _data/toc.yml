@@ -13,6 +13,7 @@ analysis:
   - function_integration
   - data_integration
 simulation:
+  - differential_equation
   - monte_carlo
 optimization:
   - ant_colony
