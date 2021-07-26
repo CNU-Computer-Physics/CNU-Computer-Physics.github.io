@@ -112,7 +112,7 @@ plt.show()
 
 앞서 두 입자의 생성비를 계산하기 위해 앞서 구한 모델로부터 두 입자의 함수를 구했습니다. 이제 각각의 에너지 스펙트럼을 적분하여 몇 개의 입자가 생성되었는지 비교하는 작업이 남았습니다.
 
-여기서는 앞서 검증했던 `scipy.integrate.trapezoid()` 함수를 사용합니다.
+여기서는 이전 시간에 검증했던 `scipy.integrate.trapezoid()` 함수를 사용합니다.
 
 ```python
 p_a_value = trapezoid(particle(xdata, *popt[:3]), xdata)
@@ -124,5 +124,4 @@ print(f"Proportion particle data (A/B): {p_a_value/p_b_value:.3f}")
 print(f"Proportion particle reference (A/B): {6000/10000:.3f}")
 ```
 
-마지막 줄은 예제로 사용했던 데이터를 생성할때 정한 비율입니다. 적분을 통해 가우시안 에너지 분포를 가진 입자들의 생성비를 알아내는 예제를 수행했습니다. 이 외에도 여기서 다룬 함수 피팅과 적분 방법은 여러 연구에 쓰입니다.
-
+마지막 줄은 예제로 사용했던 데이터를 생성할때 정한 비율입니다.
