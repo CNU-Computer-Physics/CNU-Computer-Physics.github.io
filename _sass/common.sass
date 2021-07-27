@@ -40,6 +40,16 @@ article
   p > img
     float: right
     max-width: 50%
+  a[href^="mailto:"]
+    color: material-color('cyan', '700')
+    &:before
+      content: "email"
+      font-family: 'Material Icons'
+  a[href^="http"]
+    color: material-color('pink', '700')
+    &:before
+      content: "link"
+      font-family: 'Material Icons'
   
 
 aside
