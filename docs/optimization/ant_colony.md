@@ -106,9 +106,7 @@ def step_end(path):
 
 이외에도 생각나는게 있다면 직접 프로그램을 수정해서 더 멋진 결과를 얻어 봅시다.
 
-### 과제: 외판원 문제
+## 과제: 외판원 문제
 
 [실습 저장소](https://github.com/CNU-Computer-Physics/Example-and-Practice/tree/main/%EC%B5%9C%EC%A0%81%ED%99%94)에는 좌표가 담긴 `tsp_coord.txt`가 있습니다.
-
-### 보이저 문제 (스윙바이)
 
