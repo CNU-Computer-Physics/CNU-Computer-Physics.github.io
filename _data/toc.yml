@@ -13,7 +13,8 @@ analysis:
   - function_integration
   - data_integration
 simulation:
-  - differential_equation
+  - newton_method
+  - runge-kutta_method
   - particle_dynamics
   - monte_carlo
 optimization:
