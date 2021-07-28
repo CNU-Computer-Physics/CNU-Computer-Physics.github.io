@@ -8,7 +8,7 @@ title: 전산물리학
 
 ## 저작물의 라이선스에 대한 안내
 
-별도 표기가 없는 소스코드는 [MIT 라이선스](https://ko.wikipedia.org/wiki/MIT_%ED%97%88%EA%B0%80%EC%84%9C)를 따릅니다. 이 교재의 글과 그림은 별도 표기가 없는 경우 크리에이트 커먼즈 저작자표시-비영리-동일조건변경허락(CC BY-NC-SA)를 따릅니다.
+별도 표기가 없는 소스코드는 [MIT 라이선스](https://ko.wikipedia.org/wiki/MIT_%ED%97%88%EA%B0%80%EC%84%9C)를 따릅니다. 이 교재의 글과 그림은 별도 표기가 없는 경우 [크리에이트 커먼즈 저작자표시-비영리-동일조건변경허락(CC BY-NC-SA)](http://creativecommons.org/licenses/by-nc-sa/4.0/)를 따릅니다.
 
 저작물 이용에 대한 문의는 아래 연락처를 이용해 주시기 바랍니다.
 
