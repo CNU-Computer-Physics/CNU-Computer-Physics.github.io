@@ -26,6 +26,8 @@ $$ \begin{align} x(t_{i+1}) &= x(t_i) + v(t_i)h + \frac{1}{2} a(t_i)h^2 \\ v(t_{
 
 그림은 5개의 입자가 무작위로 배치된 뒤, 무작위의 속도를 가지고 운동하는 궤적을 그린 것입니다.
 
+- 실습 파일: [`04_simulation/03_particle_motion.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/03_particle_motion.py)
+
 ### 위치와 속도의 점화식
 
 ```python

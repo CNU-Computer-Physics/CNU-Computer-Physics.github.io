@@ -18,6 +18,8 @@ $$ \begin {align*} k_1 &= f(t_n, x_n) \\ k_2 &= f(t_n + \frac {h} {2}, x_n + \fr
 
 의 점화식을 얻습니다. 여기서 $ h $는 0보다 큰 충분히 작은 값입니다. 처음 값의 기울기와 끝 값의 기울기, 각각의 중간에 해당하는 기울기를 이용해서 정확도를 높이는 방법입니다.
 
+- 실습 파일: [`04_simulation/02_runge-kutta_method.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/02_runge-kutta_method.py)
+
 ## 룽게-쿠타 함수
 
 ```python

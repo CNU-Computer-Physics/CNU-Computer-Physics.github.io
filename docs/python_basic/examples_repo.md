@@ -4,7 +4,7 @@ title: 실습 저장소
 
 # 실습용 깃허브 저장소 이용하기
 
-[깃허브(Github)](https://github.com/)는 소스코드의 버전관리를 위한 공개/비공개 저장소를 제공합니다.
+[깃허브(Github)](https://github.com/)는 소스코드의 버전관리를 위한 공개/비공개 저장소를 제공합니다. 교재는 깃허브 서비스를 이용하여 [예제 코드 및 과제를 위한 저장소](https://github.com/CNU-Computer-Physics/Example-and-Practice)를 별도로 운영하고 있습니다.
 
 ## Git 설치
 
@@ -48,7 +48,11 @@ git clone https://github.com/{내 깃허브 ID}/{포크한 저장소의 이름}
 예제 저장소가 업데이트 되었을 때 이것을 내 저장소에 적용하고 싶다면 다음 절차를 따릅니다.
 
 - 복제한 저장소의 디렉토리(ex. `Example-and-Practice/`)안에서 터미널 열기
-- 원본 리모트 추가: `git remote add upstream https://github.com/CNU-Computer-Physics/Example-and-Practice`
-- 원본으로부터 패치: `git fetch upstream`
-- 원본과 내 저장소를 병합: `git merge upstream/main`
-- 내 저장소로 밀어넣기: `git push`
+- 원본 리모트 추가:
+  `git remote add upstream https://github.com/CNU-Computer-Physics/Example-and-Practice`
+- 원본으로부터 패치:
+  `git fetch upstream`
+- 원본과 내 저장소를 병합:
+  `git merge upstream/main`
+- 내 저장소로 밀어넣기:
+  `git push`

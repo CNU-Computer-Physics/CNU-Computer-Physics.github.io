@@ -37,9 +37,12 @@ plt.show()
 
 여기서 우리는 가상의 반응이 지닌 특성을 알아내기 위해 가상의 반응이 생성하는 입자 A와 입자 B의 비율을 알고 싶습니다.
 
+- 실습 파일: [`03_analysis/05_data_integration.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/05_data_integration.py)
+- 데이터 파일: [`03_analysis/hist.csv`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/hist.csv)
+
 ## 데이터 형식
 
-주어진 데이터 [hist.csv](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/hist.csv)는 아래와 같은 형식을 가지고 있습니다. 데이터를 쉼표로 구분하는 것은 `csv`형식의 특징입니다. 1열은 에너지 채널의 최소값을 의미하고, 2열은 측정시간동안 채널에 해당하는 입자가 몇 개 측정되었는지를 나타냅니다.
+주어진 데이터는 아래와 같은 형식을 가지고 있습니다. 데이터를 쉼표로 구분하는 것은 `csv`형식의 특징입니다. 1열은 에너지 채널의 최소값을 의미하고, 2열은 측정시간동안 채널에 해당하는 입자가 몇 개 측정되었는지를 나타냅니다.
 
 ```txt
 0.0000, 6

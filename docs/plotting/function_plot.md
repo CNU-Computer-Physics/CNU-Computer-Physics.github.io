@@ -7,6 +7,8 @@ title: 함수의 그래프
 
 $ \sin(x) $ 함수를 그래프로 그립니다.
 
+- 예제 파일: [`02_plotting/01_plotting_function.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/02_plotting/01_plotting_function.py)
+
 ```python
 """사용자가 지정한 함수 그리기
 sin(x) 함수를 지정한 범위 [0, 3Pi]의 그래프로 그려서 출력하기

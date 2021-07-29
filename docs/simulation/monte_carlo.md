@@ -16,6 +16,8 @@ title: 몬테카를로
 
 몬테카를로 적분은 난수로 생성한 점 $(x, y)$이 $ x^2 + y^2 < 1 $을 만족하면 사분원 안에 있는 것으로 판단하여, 전체 생성한 난수 점(정사각형의 넓이)과 사분원 내의 난수 점(사분원의 넓이)의 비율로 $\pi$를 추정합니다.
 
+- 실습 파일: [`04_simulation/04A_monte_carlo.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/04A_monte_carlo.py)
+
 ```python
 import numpy as np
 
@@ -38,6 +40,8 @@ for count in range(count_lim):
 ## 방사성 붕괴
 
 특정한 단위시간당 붕괴 확률을 가진 입자들이 모여있을 때 전체 핵종의 수가 어떻게 변화하는지를 몬테카를로 방법으로 추정합니다.
+
+- 실습 파일: [`04_simulation/04B_monte_carlo.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/04B_monte_carlo.py)
 
 ```python
 import numpy as np
@@ -88,9 +92,13 @@ plt.show()
 
 참가자는 세개의 문 중에 하나를 선택하여 문 뒤에 숨겨진 선물을 획득할 수 있습니다. 셋 중 하나의 문 뒤에는 자동차가 있고 나머지 두 개의 문에는 염소가 있습니다. 이 때 참가자가 자동차가 숨겨진 문을 선택할 확률은 1/3일 것입니다. 그런데 여기서 사회자는 염소가 들어있는 하나의 문을 열어서 보여주고 선택을 바꿀것인지 묻습니다. 선택을 바꾸거나 바꾸지 않아도 참가자가 자동차를 뽑을은 1/2일까요?
 
+- 실습 파일: [`04_simulation/04C_monte_carlo.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/04C_monte_carlo.py)
+
 ```python
 import numpy as np
 
+count = 1000  # 시행 수
+doors = ["A", "B", "C"]  # 문
 
 def monty_hall(count, doors, has_change=True):
     player = np.zeros(count)

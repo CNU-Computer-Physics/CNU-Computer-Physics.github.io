@@ -16,85 +16,51 @@ $$ f'(x) = \frac {f(x + h) - f(x)} { h }, h \ll 1 $$
 
 ## 도함수 만들기
 
-```py
-""" 함수의 미분1
+- 실습 파일: [`03_analysis/02A_function_differential.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/02A_function_differential.py)
 
-도함수를 출력하는 기초적인 방법
-"""
-import matplotlib.pyplot as plt
-import numpy as np
-
-
-def f(x):
-    return 3 * x ** 2 + 2 * x + 6
-
-
-def g(func, x):
-    y = []
-    h = 0.01
-    for _x in x:
-        y.append((func(_x + h) - func(_x)) / h)
-    return np.array(y)
-
-
-if __name__ == "__main__":
-    x = np.linspace(0, 10)
-    ax1 = plt.subplot(2, 1, 1)
-    ax1.set_title("Original function")
-    ax1.set_xlim(0, 10)
-    ax1.set_ylim(0, 400)
-    ax1.axes.xaxis.set_ticklabels([])
-    ax1.plot(x, f(x))
-    ax1.grid(True)
-    ax2 = plt.subplot(2, 1, 2)
-    ax2.set_title("Differential function")
-    ax2.set_xlim(0, 10)
-    ax2.set_ylim(0, 200)
-    ax2.plot(x, g(f, x))
-    ax2.grid(True)
-    plt.show()
-```
-
-## 과제: 다양한 도함수 연산
-
-`f(x)`의 내용을 바꿔가며 다양한 도함수를 그래프로 출력해봅시다.
-
-## 컴퓨터로 계산한 도함수의 오차
+### 원함수
 
 ```python
-""" 함수의 미분2
-
-도함수의 오차와 검증
-"""
-import numpy as np
-import matplotlib.pyplot as plt
-
-# 데이터 간격 h
-h = 1.0
-
-
 def f(x):
     return np.sin(x)
+```
 
+도함수를 구할 원함수 $ \sin x $입니다.
 
+### 미분 함수
+
+```python
 def g(func, xmin, xmax, h=0.01):
     x = np.arange(xmin, xmax, h)
     y = []
     y0 = func(xmin)
-    print(h, y0)
     for _x in x:
         y0 += func(_x + h) - func(_x)
         y.append(y0)
     return x, np.array(y)
-
-
-if __name__ == "__main__":
-    x = np.linspace(0, np.pi * 10, 100)
-    plt.plot(x, f(x), "k--")
-    plt.plot(*g(f, 0, np.pi * 10, h), "r")
-    plt.grid(True)
-    plt.show()
 ```
+
+원함수 `func`와 $ x $의 시작값인 `xmin`, $ x $의 끝값인 `xmax`, 미분 간격 `h`을 입력받아 미분한 함수값들을 출력합니다.
+
+$$ f'(x) = \frac {f(x + h) - f(x)} { h } $$
+
+식의 파이썬 표현입니다.
+
+### 그래프 그리기
+
+```python
+x = np.linspace(0, np.pi * 10, 100)
+plt.plot(x, f(x), "k--")
+plt.plot(*g(f, 0, np.pi * 10, h), "r")
+plt.grid(True)
+plt.show()
+```
+
+`plt.plot()`의 세 번째 매개변수인 `"k--"`는 검정색(`k`), 점선(`--`)을 의미하는 약식 속성입니다. `plt.grid(True)`를 통해 그래프에 보조 격자선을 표시할 수 있습니다.
+
+## 컴퓨터로 계산한 도함수의 오차
+
+- 실습 파일: [`03_analysis/02B_function_differential.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/02B_function_differential.py)
 
 ![코드 결과](assets/function_differential_2.png)
 

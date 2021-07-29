@@ -1,8 +1,6 @@
-python_install:
-  - vscode
-  - anaconda
-  - google_colab
-  - github
+python_basic:
+  - examples_repo
+  - python_study
 plotting:
   - function_plot
   - data_plot

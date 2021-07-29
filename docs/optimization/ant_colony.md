@@ -17,6 +17,10 @@ title: 개미집단 최적화
 - 출발지와 도착지 사이에는 경로가 존재함
 - 노드와 경로의 수는 유한하며 이미 알고 있음
 
+여기서는 사각형 격자 공간에서 시작과 골 지점이 있는 상황을 두고 개미집단 최적화를 사용합니다.
+
+- 실습 파일: [`05_optimization/01_ant_colony.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/05_optimization/01_ant_colony.py)
+
 ## 프로그램 구조
 
 ```python
@@ -60,6 +64,8 @@ def get_neighbors(x, y):
     ]
 ```
 
+현재 타일 좌표를 `x`, `y`로 받아 상하좌우와 대간선 방향까지 감안한(8방향) 이웃 타일들의 좌표를 출력합니다.
+
 ## 개미 경로 생성
 
 ```python
@@ -82,6 +88,8 @@ def ant_path_finding():
     return path
 ```
 
+개미 한 마리가 페로몬의 농도로 보정한 확률 공간에 따라 8방향 중 하나를 골라 이동합니다. 400번 이동할 때까지 골 지점에 도착하지 못하면 이동을 포기합니다.
+
 ## 지역 페로몬 업데이트
 
 ```python
@@ -96,6 +104,8 @@ def step_end(path):
     return
 ```
 
+골 지점에 성공적으로 도착한 개미의 경로를 따라 페로몬을 더하고 타일 전체의 페로몬을 정해진 비율로 휘발시킵니다.
+
 ## 더 멋지게 만들기
 
 이런 아이디어를 추가하면 더 멋진 결과를 얻을 수 있습니다.
@@ -105,8 +115,3 @@ def step_end(path):
 - 예제는 주어진 횟수만큼 반복했지만 조건부 반복(`while`)을 사용해서 경로가 충분히 고정되었거나 페로몬의 변화가 충분히 적을 때 계산을 종료하도록 만들 수 있습니다.
 
 이외에도 생각나는게 있다면 직접 프로그램을 수정해서 더 멋진 결과를 얻어 봅시다.
-
-## 과제: 외판원 문제
-
-[실습 저장소](https://github.com/CNU-Computer-Physics/Example-and-Practice/tree/main/%EC%B5%9C%EC%A0%81%ED%99%94)에는 좌표가 담긴 `tsp_coord.txt`가 있습니다.
-

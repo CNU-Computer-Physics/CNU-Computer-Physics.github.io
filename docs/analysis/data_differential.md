@@ -6,61 +6,11 @@ title: 데이터의 미분
 
 여기서는 데이터를 미분한 것과 데이터를 피팅한 후 미분한 것을 비교하도록 합니다.
 
-```python
-"""데이터의 미분량
-소스코드의 실행 디렉토리와 데이터파일의 디렉토리가 일치하도록 조정
-"""
-import numpy as np
-import matplotlib.pyplot as plt
+- 실습 파일: [`03_analysis/03_data_differential.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/03_data_differential.py)
 
-x = []
-y = []
+## 프로그래밍
 
-with open("input.csv", "r") as f:
-    for line in f.readlines():
-        _x, _y = [float(i) for i in line.split(" ")]
-        x.append(_x)
-        y.append(_y)
-
-
-def g(x, y):
-    new_x = []
-    new_y = []
-    for idx in range(len(x) - 1):
-        new_x.append((x[idx] + x[idx + 1]) / 2)
-        new_y.append((y[idx + 1] - y[idx]) / (x[idx + 1] - x[idx]))
-    return new_x, new_y
-
-
-if __name__ == "__main__":
-    # 2차함수로 피팅한 x와 y
-    fit = np.poly1d(np.polyfit(x, y, 2))
-    fit_x = np.linspace(0, 1)
-    fit_y = fit(fit_x)
-
-    # 그래프 1: 원시데이터
-    ax1 = plt.subplot(2, 1, 1)
-    ax1.set_title("Original function")
-    ax1.set_xlim(0, 1)
-    ax1.set_ylim(-2, 2)
-    ax1.axes.xaxis.set_ticklabels([])
-    ax1.plot(fit_x, fit_y, "k--")
-    ax1.scatter(x, y)
-    ax1.grid(True)
-
-    # 그래프 2: 미분한 데이터
-    ax2 = plt.subplot(2, 1, 2)
-    ax2.set_title("Differential function")
-    ax2.set_xlim(0, 1)
-    ax2.set_ylim(-20, 20)
-    ax2.plot(fit_x[:-1], np.diff(fit_y) / (fit_x[1] - fit_x[0]), "k--")
-    ax2.scatter(*g(x, y))
-    ax2.grid(True)
-
-    plt.show()
-```
-
-## 데이터 읽어들이기
+### 데이터 읽어들이기
 
 이전 데이터 피팅에서 사용했던 `input.csv`파일을 그대로 사용합니다. 내용은 아래와 같이 공백으로 구분한 두 실수입니다.
 
@@ -85,7 +35,7 @@ with open("input.csv", "r") as f:
         y.append(_y)
 ```
 
-## 데이터의 미분
+### 데이터의 미분
 
 함수의 미분과 같은 방식으로 데이터 미분을 수행합니다.
 
@@ -105,7 +55,7 @@ $$ y_i = \frac {f(x_{i+1}) - f(x_i)} { x_{i+1} - x_i } $$
 
 $$ x_i = \frac {x_{i+1} + x_i} {2} $$
 
-## 데이터를 피팅하고 미분
+### 데이터를 피팅하고 미분
 
 ```python
 # 2차함수로 피팅한 x와 y
@@ -116,7 +66,7 @@ fit_y = np.diff(fit(fit_x))
 
 `np.diff()`는 배열의 한 축을 정하고 그 축을 따라 변화량을 계산해서 새로운 배열로 돌려줍니다. 1차원 배열이 들어간 경우 순서상으로 이웃한 두 값 사이의 변화량을 출력하며 배열의 크기는 하나 줄어들게 됩니다.
 
-## 프로그램 결과
+## 결과
 
 ![코드 결과](assets/data_differential_1.png)
 

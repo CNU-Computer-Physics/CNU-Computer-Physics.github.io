@@ -16,47 +16,12 @@ $$ f(x) = \sum _i a_i x^{i} $$
 
 아래의 프로그램은 여러 차수에 대해 다항식 피팅을 수행하고 그래프로 표시합니다.
 
-## 프로그램
+- 데이터 파일: [`03_analysis/input.csv`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/input.csv)
+- 실습 파일: [`03_analysis/01_data_fitting.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/01_data_fitting.py)
 
-```py
-import numpy as np
-import matplotlib.pyplot as plt
+## 프로그래밍
 
-x = []
-y = []
-
-with open("input.csv", "r") as f:
-    for line in f.readlines():
-        _x, _y = [float(i) for i in line.split(" ")]
-        x.append(_x)
-        y.append(_y)
-
-degs = [1, 2, 3, 4, 5, 8, 14, 18]
-new_x = np.linspace(0, 1)
-plt.figure(figsize=(8, 10))
-for idx, deg in enumerate(degs):
-    # 계수 연산
-    coef = np.polyfit(x, y, deg)
-    # 연산한 계수를 함수로 만듬
-    fit = np.poly1d(coef)
-    # R^2값 계산
-    sst = np.sum(np.power(y - np.average(y), 2))
-    ssr = np.sum(np.power(y - fit(x), 2))
-    sqr = 1 - (ssr / sst)
-    print(f"======= DEG: {deg}, R^2:{sqr:.3f} =======")
-    print(coef)
-
-    # 서브플롯 명령
-    ax = plt.subplot(4, 2, idx + 1)
-    ax.set_xlim(0, 1)
-    ax.set_ylim(-1, 1)
-    ax.text(0.05, -0.9, f"DEG: {deg}, $R^2$:{sqr:.3f}", fontsize=10)
-    ax.plot(x, y, ".k")
-    ax.plot(new_x, fit(new_x), "--r", label="DEG: {}".format(deg))
-plt.savefig("fitting.png", bbox_inches="tight")
-```
-
-## 파일 읽어들이기
+### 파일 읽어들이기
 
 `input.csv`파일의 내용은 아래와 같이 공백으로 구분한 두 실수입니다.
 
@@ -83,7 +48,7 @@ with open("input.csv", "r") as f:
 
 이처럼 데이터 파일의 형식을 명확하게 알고 있는 경우 축약표현을 사용할 수 있습니다. `[float(i) for i in line.split(" ")]`는 문자열 `line`을 공백 기준으로 나누고 각각을 `float()`로 실수형 값으로 변환합니다.
 
-## 최적화 계수 구하기
+### 최적화 계수 구하기
 
 ```py
 degs = [1, 2, 3, 4, 5, 8, 14, 18]
@@ -107,7 +72,7 @@ for idx, deg in enumerate(degs):
 
 $$ r^{2} = \frac {\sum_{i} ( y_i - \bar{y} )^2}{\sum_{i} ( y_i - g(x_i) )^2} $$
 
-## 한 그림에 여러 그래프 표시하기
+### 한 그림에 여러 그래프 표시하기
 
 ```py
 degs = [1, 2, 3, 4, 5, 8, 14, 18]
@@ -122,7 +87,7 @@ for idx, deg in enumerate(degs):
     ax.text(0.05, -0.9, f"DEG: {deg}, $R^2$:{sqr:.3f}", fontsize=10)
     ax.plot(x, y, ".k")
     ax.plot(new_x, fit(new_x), "--r", label="DEG: {}".format(deg))
-plt.savefig("fitting.png", bbox_inches="tight")
+plt.savefig("01_data_fitting.png", bbox_inches="tight")
 ```
 
 `plt.figure()`는 그림의 속성을 지시합니다. 사용한 `figsize=(8, 10)` 속성은 그림의 크기를 지시하며, 가로 8인치, 세로 10인치인 그림을 그릴 것이라는 표시가 됩니다.

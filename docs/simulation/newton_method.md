@@ -6,6 +6,8 @@ title: 뉴턴 방법
 
 여기서는 뉴턴 방법(Newton method)을 이용해 해를 찾는 방법과 운동하는 물체의 경로를 찾는 방법을 알아봅니다.
 
+- 실습 파일: [`04_simulation/01_newton_method.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/04_simulation/01_newton_method.py)
+
 ## 뉴턴 방법으로 해 찾기
 
 ![코드 결과](assets/newton_method_1.gif)
