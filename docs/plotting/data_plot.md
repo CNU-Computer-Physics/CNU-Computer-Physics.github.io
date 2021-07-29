@@ -37,7 +37,7 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-![코드 결과](../assets/data_plot_1.png)
+![코드 결과](assets/data_plot_1.png)
 
 이 프로그램은 프로그램과 동일한 디렉토리에 위치한 파일 `input.txt`를 열어 데이터를 추출한 뒤 추출한 데이터를 그래프로 표시합니다.
 

@@ -4,7 +4,7 @@ title: 개미집단 최적화
 
 # 개미집단 최적화
 
-![코드 결과](../assets/ant_colony_1.png)
+![코드 결과](assets/ant_colony_1.png)
 
 개미집단 최적화(Ant colony optimization)는 개미가 먹이와 집의 경로를 찾는 과정을 흉내내어 최적의 경로를 찾아내는 최적화 기법입니다. 이런 경우에 유용하게 사용할 수 있습니다.
 

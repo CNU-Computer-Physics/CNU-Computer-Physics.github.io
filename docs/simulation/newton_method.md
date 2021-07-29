@@ -8,7 +8,7 @@ title: 뉴턴 방법
 
 ## 뉴턴 방법으로 해 찾기
 
-![코드 결과](../assets/newton_method_1.gif)
+![코드 결과](assets/newton_method_1.gif)
 
 뉴턴 방법(Newton method)은 아래와 같은 점화식을 가집니다.
 
@@ -26,7 +26,7 @@ $$ \begin {align*} 0 &= f_1 (x) - f_2 (x) \\ &= 3x - \cos x \end {align*}$$
 
 $$  \begin {align*} f(x_0) &= 3x_0 - \cos x_0 \\ f'(x_0) &= 3 + \sin x_0 \end {align*} $$
 
-![접선을 이용한 뉴턴 방법](../assets/newton_method_2.png)
+![접선을 이용한 뉴턴 방법](assets/newton_method_2.png)
 
 그래프를 그린다고 생각하면, $f'(x_0)$는 ($x_0$, $f(x_0)$) 지점과 접한 접선의 기울기입니다. $ x_1 $은 접선과 우리가 목표하는 지점인 $f(x)=0$이 만나는 점으로 하면 다음과 같이 쓸 수 있습니다.
 

@@ -46,7 +46,7 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-![코드 결과](../assets/function_integration_1.png)
+![코드 결과](assets/function_integration_1.png)
 
 이 프로그램은 사다리꼴 적분을 직접 `int_f()` 함수로 구현해서 사용하는 방법과 `scipy`의 `integrate.trapezoid`함수를 이용하는 방법을 각각 실행하고 결과를 그래프상에 표시합니다.
 

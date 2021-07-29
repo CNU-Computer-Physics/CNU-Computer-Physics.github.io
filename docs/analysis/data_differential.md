@@ -118,7 +118,7 @@ fit_y = np.diff(fit(fit_x))
 
 ## 프로그램 결과
 
-![코드 결과](../assets/data_differential_1.png)
+![코드 결과](assets/data_differential_1.png)
 
 앞서 다뤘던 함수의 도함수를 계산하는 요령으로 데이터의 미분량을 구하는 함수가 `g()`입니다. 그래프에는 점으로 표현되어 있는 값입니다.
 

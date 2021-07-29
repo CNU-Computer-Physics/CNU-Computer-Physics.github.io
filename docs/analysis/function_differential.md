@@ -4,7 +4,7 @@ title: 함수의 미분
 
 # 함수를 미분하기
 
-![코드 결과](../assets/function_differential_1.png)
+![코드 결과](assets/function_differential_1.png)
 
 함수$ f(x) $를 미분하는 경우 아래의 과정을 거치게 됩니다.
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-![코드 결과](../assets/function_differential_2.png)
+![코드 결과](assets/function_differential_2.png)
 
 이 프로그램은 도함수를 사용해서 원래 함수와 같은 값을 출력하도록 만든 것입니다.
 

@@ -8,7 +8,7 @@ title: 몬테카를로
 
 ## 파이 근사하기
 
-![코드 결과](../assets/monte_carlo_3.gif)
+![코드 결과](assets/monte_carlo_3.gif)
 
 몬테카를로 적분을 이용해 $\pi$를 구하는 방법입니다. 이 방법은 유한한 공간에서 난수로 생성한 점이 적분할 공간 안에 있는지 밖에 있는지 확인 할 수 있는 경우에 사용할 수 있습니다.
 
@@ -76,7 +76,7 @@ plt.ylim(0, nuclides_n)
 plt.show()
 ```
 
-![코드 결과](../assets/monte_carlo_2.png)
+![코드 결과](assets/monte_carlo_2.png)
 
 이벤트를 반복하고 결과를 그래프로 출력하는 부분입니다.
 
@@ -124,7 +124,7 @@ def monty_hall(count, doors, has_change=True):
     return player
 ```
 
-![코드 결과](../assets/monte_carlo_1.png)
+![코드 결과](assets/monte_carlo_1.png)
 
 X축은 누적 시행 횟수, Y축은 누적 상품 획득률입니다. 시행횟수가 증가할수록 특정 수치에 수렴하는 것을 볼 수 있습니다.
 
