@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.docsurl | absolute_url }}</loc>
+  </url>
+{% for chapter in site.data.toc -%}
+  <url>
+    <loc>{{  "/" | append: site.docsurl | append: chapter[0] | append: "/" | absolute_url }}</loc>
+  </url>
+  {%   for doc_name in chapter[1] -%}
+    {% assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" | append: doc_name | append: "/" -%}
+    {% assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+    <url>
+      <loc>{{ doc.url | absolute_url }}</loc>
+    </url>
+  {% endfor -%}
+{% endfor -%}
+</urlset>
