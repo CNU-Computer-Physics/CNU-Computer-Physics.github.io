@@ -1,0 +1,55 @@
+{% capture CONTENTS %}
+{% for chapter in site.data.toc -%}
+  {% assign chapter_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
+  {% assign doc = site.html_pages | where: 'dir', chapter_dir | first -%}
+  <div class="warpper chapter"><div class="page chapter"><span class="page-number"></span><h1 id="{{ doc.title | url_encode}}">{{ doc.title }}</h1></div>
+  <div class="page clauses"><span class="page-number"></span>{{ doc.content }}</div>
+  {% for clauses in chapter[1] -%}
+    {% assign clauses_dir = chapter_dir | append: clauses | append: "/" -%}
+    {% assign doc = site.html_pages | where: 'dir', clauses_dir | first -%}
+    <div class="page clauses"><span class="page-number"></span>{{ doc.content }}</div>
+  {% endfor -%}
+  </div>
+{% endfor -%}
+{% endcapture -%}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <title>{{ site.title }}</title>
+  <script defer src="{{ "js/onload.js" | absolute_url }}"></script>
+  <link rel="stylesheet" href="{{ "css/main.css" | absolute_url }}">
+</head>
+<body class="print">
+  <main>
+    <article>
+      <div class="page title">
+        <h1 class="title">{{ site.bookname }}</h1>
+        <p class="desc">{{ site.description }}</p>
+        {% for author in site.authors -%}
+        <div class="author">
+          <!-- <span class="affiliation">{{ author.affiliation }}</span> -->
+          <span class="name">{{ author.name }}</span>
+        </div>
+        {% endfor -%}
+      </div>
+      <div class="page home">
+        {% assign home = site.docsurl | relative_url -%}
+        {% assign doc = site.html_pages | where: 'dir', home | first -%}
+        {{ doc.content }}
+      </div>
+      <div class="page toc">
+        <h1>차례</h1>
+        <ul id="textbook-toc"></ul>
+      </div>
+      {{ CONTENTS }}
+    </article>
+  </main>
+</body>
+</html>

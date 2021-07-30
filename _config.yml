@@ -19,13 +19,21 @@
 # in the templates via {{ site.myvariable }}.
 
 title: 충남대학교 전산물리학
+bookname: 물리학을 위한 파이썬
 email: soma0sd@gmail.com
 description: >-
-  충남대학교 전산물리학 교재개발
+  파이썬3를 이용한 전산물리학
 baseurl: ""
 url: "https://cnu-computer-physics.github.io"
 github_username: soma0sd
 docsurl: "docs/"
+authors:
+  -
+    name: "진승완"
+    affiliation: "충남대학교 교육학과 석사과정"
+  -
+    name: "강창종"
+    affiliation: "충남대학교 물리학과 교수"
 
 plugins:
   - jekyll-feed

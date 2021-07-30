@@ -1,0 +1,175 @@
+
+@page
+  size: A4
+  margin: 0
+body.print
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  background-color: #FAFAFA
+  box-sizing: border-box
+  counter-reset: chapter page
+  *
+    box-sizing: border-box
+  article
+    min-height: unset
+    padding: 0
+    margin: 0 auto
+    width: auto
+    max-width: unset
+  div.warpper.chapter
+      counter-reset: clauses
+body.print div.page
+  width: 210mm
+  min-height: 297mm
+  padding: 20mm
+  margin: 10mm auto
+  border: 1px #D3D3D3 solid
+  border-radius: 5px
+  background: white
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+  counter-increment: page
+  @media print
+    margin: 0 0 0 0
+    border: initial
+    border-radius: initial
+    width: initial
+    min-height: initial
+    box-shadow: initial
+    background: initial
+    page-break-after: always
+  h1
+    text-align: left
+  a[href^="http"]
+    font-weight: 500
+    &::after
+      content: ""
+    &::before
+      content: ""
+  a>code
+    border: none
+  p>code, li>code
+    height: auto
+    background: material-color('blue-grey', '100') !important
+    color: material-color('blue-grey', '600')
+    -webkit-print-color-adjust: exact
+  &>p
+    text-indent: 1.0em
+    *
+      text-indent: 0
+  p > img
+    float: right
+    margin: 0 0 0.5em 0.5em
+    width: 80mm
+    height: auto
+body.print div.page.chapter
+  h1
+    padding-top: 20%
+    text-align: center
+    font-size: 2rem
+  h1::before
+    counter-increment: chapter
+    content: counter(chapter, upper-roman) ". "
+body.print div.page.clauses
+  position: relative
+  .page-number
+    display: block
+    position: absolute
+    bottom: 10mm
+    left: 0
+    right: 0
+    text-align: center
+
+  h1::before
+    counter-increment: clauses
+    content: counter(chapter) "." counter(clauses) " "
+body.print div.page.title
+  font-family: 'Noto Sans KR', sans-serif
+  text-align: right
+  line-height: 1
+  padding-top: 30%
+  h1.title
+    text-align: right
+    font-size: 3.5em
+    margin: 0.3rem 0
+    padding-bottom: 0.8rem
+    border-bottom: 2px material-color('cyan', '900') solid
+  .desc
+    font-size: 1.5em
+    margin: 0.3rem 0
+    font-weight: bold
+    margin-bottom: 2rem
+  .author
+    font-size: 1.5rem
+    padding: 0.3rem
+    .name
+      font-weight: bold
+    .affiliation
+      font-size: 1.3rem
+body.print div.page.toc
+  h1
+    font-family: 'Noto Sans KR', sans-serif
+    border-bottom: 2px material-color('cyan', '900') solid
+    margin: 0.3rem 0
+    padding-bottom: 0.8rem
+body.print div.highlighter-rouge,
+body.print pre>code
+  background: material-color('blue-grey', '100') !important
+  color: material-color('blue-grey', '900')
+  -webkit-print-color-adjust: exact
+  .s
+    color: material-color('deep-orange', '800')
+  .nf
+    color: material-color('green', '800')
+
+@mixin repeater($item, $count)
+    $string: ""
+    @for $i from 1 through $count
+        $string: $string + $item
+    content: $string
+
+#textbook-toc
+  list-style: none
+  padding-left: 0
+  counter-reset: chapter_
+  ul
+    list-style: none
+    padding-left: 8mm
+  a
+    color: material-color('blue-grey', '900')
+  .chapter
+    counter-reset: clauses_
+  .chapter-title
+    font-weight: bold
+    &::before
+      counter-increment: chapter_
+      content: counter(chapter_, upper-roman) ". "
+  .chapter-page
+    display: none
+  .clauses-item a
+    display: grid
+    grid-template-columns: auto max-content
+    grid-template-areas: "clauses page"
+    align-items: end
+    gap: 0 5mm
+  .clauses-title
+    grid-area: clauses
+    position: relative
+    overflow: hidden
+    &::before
+      counter-increment: clauses_
+      content: counter(chapter_) "." counter(clauses_) ". "
+    &::after
+      position: absolute
+      padding-left: 5mm
+      text-align: right
+      @include repeater(' .', 120)
+  .clauses-page
+    grid-area: page
+
+@media print
+  html, body
+    width: 210mm
+    height: 297mm
+ 
