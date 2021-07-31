@@ -4,6 +4,7 @@ python_basic:
 plotting:
   - function_plot
   - data_plot
+  - histogram
 analysis:
   - data_fitting
   - function_differential
