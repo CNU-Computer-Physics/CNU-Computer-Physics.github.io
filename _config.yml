@@ -27,6 +27,7 @@ baseurl: ""
 url: "https://cnu-computer-physics.github.io"
 github_username: soma0sd
 docsurl: "docs/"
+imageurl: "docs/images/"
 authors:
   -
     name: "진승완"

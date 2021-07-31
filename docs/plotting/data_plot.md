@@ -60,6 +60,6 @@ if __name__ == "__main__":
 
 ## 결과
 
-![코드 결과](assets/data_plot_1.png)
+![데이터 플롯]({{ site.imageurl | append: "data_plot_1.png" | absolute_url }})
 
 `plt.scatter(x, y)`로 표시한 그래프는 앞의 함수를 그래프로 그렸을 때 사용한 `plt.plot(x, y)`와는 다르게 데이터를 점으로 표시합니다.

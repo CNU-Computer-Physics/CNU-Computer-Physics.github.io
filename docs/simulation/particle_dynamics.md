@@ -10,7 +10,7 @@ title: 분자동역학
 
 ## 다체문제
 
-![코드 결과](assets/particle_dynamics_1.png)
+![다체 문제]({{ site.imageurl | append: "particle_dynamics_1.png" | absolute_url }})
 
 N개의 입자가 중력을 주고받는 상황에서 각 입자가 그리는 궤적을 추적합니다. 벌렛 방법으로 기술하는 각 입자의 운동방정식은 이렇게 쓰입니다.
 

@@ -44,7 +44,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![코드 결과](assets/index_1.png)
+![그래프]({{ site.imageurl | append: "plotting_1.png" | absolute_url }})
 
 위 예제를 실행하면 새로운 창에 그림과 같은 그래프를 포시합니다. 아나콘다(Anaconda)의 스파이더(Spyder) 편집기를 사용하거나 구글 코랩(colab) 등 주피터 노트북(Jupyter notebook)기반의 편집기에서 실행하는 경우 결과 표시 창에 그래프를 출력합니다.
 

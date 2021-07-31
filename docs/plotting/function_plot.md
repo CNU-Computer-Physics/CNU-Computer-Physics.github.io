@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
 ```
 
-![코드 결과](assets/function_plot_1.png)
+![함수의 플롯]({{ site.imageurl | append: "function_plot_1.png" | absolute_url }})
 
 `np.linspace(0, 3)`은 0부터 3사이 숫자를 일정 간격으로 50개(기본값) 만들어 numpy의 array 자료형으로 출력합니다. 출력 결과는 `[0.00, 0.06, 0.12,..]` 형태입니다.
 

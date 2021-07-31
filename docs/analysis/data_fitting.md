@@ -4,7 +4,7 @@ title: 데이터 피팅
 
 # 데이터 피팅
 
-![코드 결과](assets/data_fitting_1.png)
+![데이터 피팅]({{ site.imageurl | append: "data_fitting_1.png" | absolute_url }})
 
 앞서 그린 데이터 그래프를 토대로 다항식 모델을 세워 계수를 알아내려고 합니다.
 

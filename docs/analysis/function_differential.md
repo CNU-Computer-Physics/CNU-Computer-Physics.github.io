@@ -4,7 +4,7 @@ title: 함수의 미분
 
 # 함수를 미분하기
 
-![코드 결과](assets/function_differential_1.png)
+![함수의 미분 1]({{ site.imageurl | append: "function_differential_1.png" | absolute_url }})
 
 함수$ f(x) $를 미분하는 경우 아래의 과정을 거치게 됩니다.
 
@@ -62,7 +62,7 @@ plt.show()
 
 - 실습 파일: [`03_analysis/02B_function_differential.py`](https://github.com/CNU-Computer-Physics/Example-and-Practice/blob/main/03_analysis/02B_function_differential.py)
 
-![코드 결과](assets/function_differential_2.png)
+![함수의 미분 1]({{ site.imageurl | append: "function_differential_2.png" | absolute_url }})
 
 이 프로그램은 도함수를 사용해서 원래 함수와 같은 값을 출력하도록 만든 것입니다.
 
