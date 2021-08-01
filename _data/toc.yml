@@ -1,7 +1,9 @@
 python_basic:
+  - install_python
   - examples_repo
   - python_study
 plotting:
+  - install_matplotlib
   - function_plot
   - data_plot
   - histogram

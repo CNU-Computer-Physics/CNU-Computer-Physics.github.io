@@ -8,47 +8,49 @@ TABLE_OF_CONTENTS
 
 {% capture TABLE_OF_CONTENTS %}
 <ul>
-  <li class="toc-1">
-{%  assign home = site.docsurl | relative_url -%}
-{%   if home == page.url -%}
+{% comment -%} 홈페이지 {% endcomment %}
+  <li class="toc-1 home">
+  {% assign home = site.docsurl | relative_url -%}
+  {% if home == page.url -%}
     <a class="active" href="">{{ site.title }}</a>
-{%   else -%}
+  {% else -%}
     <a href="{{ site.docsurl | absolute_url }}">{{ site.title }}</a>
-{%   endif -%}
+  {% endif -%}
   </li>
-{% for chapter in site.data.toc -%}
-{%   assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
-{%   assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
-{% comment -%}
-doc의 속성:
-  layout
-  title 제목 속성(프론트메타)
-  content
-  dir
-  name 파일명
-  path 파일 경로
-  url 상대 URL
-{% endcomment -%}
-<li class="toc-1">
-{%   if doc.url == page.url -%}
-  <a class="active" href="">{{ doc.title }}</a>
-{%   else -%}
-  <a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
-{%   endif -%}
+  {% comment -%} 문서 나열 {% endcomment %}
+  {% for chapter in site.data.toc -%}
+  {% assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
+  {% assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+  {% comment -%} 문서 나열: 장 목록 {% endcomment %}
+  <li class="toc-1">
+    <a>{{ doc.title }}</a>
     <ul>
-{%   for doc_name in chapter[1] -%}
-{%     assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" | append: doc_name | append: "/" -%}
-{%     assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
+    {% comment -%} 문서 나열: 절 목록 {% endcomment %}
+    {% for doc_name in chapter[1] -%}
+      {% assign doc_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" | append: doc_name | append: "/" -%}
+      {% assign doc = site.html_pages | where: 'dir', doc_dir | first -%}
       <li class="toc-2">
-{%     if doc.url == page.url -%}
+      {% if doc.url == page.url -%}
         <a class="active" href="">{{ doc.title }}</a>
-{%     else -%}
+      {% else -%}
         <a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a>
-{%     endif -%}
-      </li>
-{%   endfor -%}
+      {% endif -%}
+        </li>
+    {% endfor -%}
     </ul>
   </li>
-{% endfor -%}
+  {% endfor -%}
+  {% comment -%} 종이책 버전 {% endcomment %}
+  {% assign textbook_dir = "/" | append: site.docsurl | append: "textbook" | append: "/" -%}
+  {% assign textbook_doc = site.html_pages | where: 'dir', textbook_dir | first -%}
+  <li class="toc-1">
+    <a href="{{ site.docsurl | append: "textbook" | absolute_url }}">{{ textbook_doc.title }}</a>
+  </li>
+  {% comment -%} 버전 기록 {% endcomment %}
+  {% assign changes_dir = "/CHANGES/" -%}
+  {% assign changes_doc = site.html_pages | where: 'dir', changes_dir | first -%}
+  <li class="toc-1">
+    <a href="{{ "/CHANGES" | absolute_url }}">{{ changes_doc.title }}</a>
+  </li>
 </ul>
 {% endcapture -%}

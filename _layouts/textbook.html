@@ -3,7 +3,6 @@
   {% assign chapter_dir = "/" | append: site.docsurl | append: chapter[0] | append: "/" -%}
   {% assign doc = site.html_pages | where: 'dir', chapter_dir | first -%}
   <div class="warpper chapter"><div class="page chapter"><span class="page-number"></span><h1 id="{{ doc.title | url_encode}}">{{ doc.title }}</h1></div>
-  <div class="page clauses"><span class="page-number"></span>{{ doc.content }}</div>
   {% for clauses in chapter[1] -%}
     {% assign clauses_dir = chapter_dir | append: clauses | append: "/" -%}
     {% assign doc = site.html_pages | where: 'dir', clauses_dir | first -%}
