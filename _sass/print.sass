@@ -51,7 +51,7 @@ body.print div.page
     border: none
   p>code, li>code
     height: auto
-    background: material-color('blue-grey', '100') !important
+    background: material-color('blue-grey', '100')
     color: material-color('blue-grey', '600')
     -webkit-print-color-adjust: exact
   &>p
@@ -113,15 +113,19 @@ body.print div.page.toc
     border-bottom: 2px material-color('cyan', '900') solid
     margin: 0.3rem 0
     padding-bottom: 0.8rem
-body.print div.highlighter-rouge,
-body.print pre>code
-  background: material-color('blue-grey', '100') !important
+body.print div.highlighter-rouge
+  background: unset !important
   color: material-color('blue-grey', '900')
-  -webkit-print-color-adjust: exact
-  .s
-    color: material-color('deep-orange', '800')
-  .nf
-    color: material-color('green', '800')
+  border: material-color('blue-grey', '100') 2px solid
+  border-radius: 0.2rem
+  td.rouge-gutter
+    padding: 0 0.5rem
+  code
+    overflow-y: hidden
+    .s
+      color: material-color('deep-orange', '800')
+    .nf
+      color: material-color('green', '800')
 
 @mixin repeater($item, $count)
     $string: ""

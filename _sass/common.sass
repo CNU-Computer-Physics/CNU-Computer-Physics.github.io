@@ -46,6 +46,10 @@ article
   p > img
     float: right
     max-width: 50%
+  a
+    &::before, &:after
+      line-height: 1.8em
+      vertical-align: middle
   a[href^="mailto:"]
     color: material-color('cyan', '700')
     &:before
@@ -63,8 +67,6 @@ article
     &:after
       content: "description"
       display: inline-block
-      vertical-align: middle
-      line-height: 1.8em
       font-size: 1.2em
       font-family: 'Material Icons'
   a[href^="/docs/"]
@@ -86,7 +88,13 @@ article
     padding: 1px 8px
     background: linear-gradient(178deg, #fff, #fff, #fff, #ddd)
     box-shadow: 1px 1px 2px #777
-  
+  blockquote
+    margin: 1.0rem 0
+    padding: 0.5rem 1rem
+    background: material-color('blue', '100')
+    border-left: 0.8rem material-color('blue', '600') solid
+    border-top-right-radius: 0.5rem
+    border-bottom-right-radius: 0.5rem
 
 aside
   width: $sidebar_width
@@ -98,26 +106,21 @@ aside
   ul
     list-style: none
     padding-left: 0
-    a
-      transition: 0s
-    .toc-1 a
-      padding-left: 1rem
-      font-weight: bold
-    .toc-2 a
-      padding-left: 2rem
-      font-weight: normal
   a
     display: block
     line-height: 1.5em
     color: material-color('cyan', '900')
     padding: 5px
-    .toc-1 &
-      font-weight: bold
-    .toc-1 &
-      font-weight: normal
-    &.active
-      background: material-color('cyan', '900')
-      color: material-color('blue-grey', '50')
+    transition: 0s
+  .toc-1 a
+    padding-left: 1rem
+    font-weight: 800
+  .toc-2 a
+    padding-left: 2rem
+    font-weight: normal
+  a.active
+    background: material-color('cyan', '900')
+    color: material-color('blue-grey', '50')
 
 #open-sidebar
   display: none
